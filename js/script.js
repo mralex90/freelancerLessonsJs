@@ -1,4 +1,4 @@
 // точка с запятой
+"use strict";
 
-console.log('Учим JS');
-['Учим', 'JS'].forEach(alert);
+console.log('Я учу JS');
