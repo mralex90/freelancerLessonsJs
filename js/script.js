@@ -1,4 +1,8 @@
-// точка с запятой
-"use strict";
+let eyeColor = 'blue';
+console.log(eyeColor);
 
-console.log('Я учу JS');
+let user;
+let userName = 'Вася';
+
+user = userName;
+console.log(user);
