@@ -1,50 +1,26 @@
-//  ОБЪЯВЛЕНИЕ ПЕРЕМЕННОЙ 
+// ОБЪЯВЛЕНИЕ НЕСКОЛЬКИХ ПЕРЕМЕННЫХ
 
-// ключевое слово для обьявления переменной
+// В строку через запятую
+let myName = 'Oleks', myAge = 30, myAddreess = 'Ukraine';
 
-//  имя переменной может содержатьтолько буквы, цифры и символы $ и _. 
-// При этом первый символ не может быть цифорй
+// Через запятую с новой строки
+let myName = 'Oleks',
+    myAge = 30,
+    myAddreess = 'Ukraine';
 
-// Верное обьявление:
-let age;
-let info123;
-let $size;
-let _color;
-
-// Неверное  обьявление
-let 123info;
-let my-age;
-
-// Вместо 
-let s;
-let sdkjkldlgsljl;
-let leftsidebarsize;
-
-// Лучше писать 
-let size;
-let age;
-let leftSidebarSize;
-
-//Регистр имеет значение
-let sidebarsize;
-let sidebarSize;
-
-// Нельзя использовать зарезервированые имена
-
-let let;
-let break;
-let for;
+// Отдельно
+let myName = 'Oleks',
+let myAge = 30,
+let myAddreess = 'Ukraine';
 
 
-// ПРИСВОЕНИЕ ЗНАЧЕНИЯ ПЕРЕМЕННОЙ
+//  ИЗМЕНЕНИЕ ЗНАЧЕНИЯ ПЕРЕМЕННОЙ
 
-// Объявление без значения
-// let myLifeStyle;
+let myAge = 30;
+myAge = 21;
+// console.log(myAge);
 
-// Присвоение значения
-// myLifeStyle = 'freelance';
+//  Копируем значение переменной myNewAge в переменную myAge
 
-// Объявление переменной и присвоение значения
-let myLifeStyle = 'freelance';
-console.log(myLifeStyle);
-
+myAge = myNewAge;
+// console.log(myAge);
