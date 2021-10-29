@@ -1,26 +1,8 @@
-// ОБЪЯВЛЕНИЕ НЕСКОЛЬКИХ ПЕРЕМЕННЫХ
+// USE STRICT И ПЕРЕМЕННЫЕ
 
-// В строку через запятую
-let myName = 'Oleks', myAge = 30, myAddreess = 'Ukraine';
+// "USE STRICT" строгий режим отключен
 
-// Через запятую с новой строки
-let myName = 'Oleks',
-    myAge = 30,
-    myAddreess = 'Ukraine';
+myAge = 30;
+console.log(myAge);
 
-// Отдельно
-let myName = 'Oleks',
-let myAge = 30,
-let myAddreess = 'Ukraine';
-
-
-//  ИЗМЕНЕНИЕ ЗНАЧЕНИЯ ПЕРЕМЕННОЙ
-
-let myAge = 30;
-myAge = 21;
-// console.log(myAge);
-
-//  Копируем значение переменной myNewAge в переменную myAge
-
-myAge = myNewAge;
-// console.log(myAge);
+// если присутствует режим use strict то переменную обьявляем через let
