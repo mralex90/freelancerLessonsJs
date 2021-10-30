@@ -28,3 +28,42 @@ console.log(userProfile);
 // Тоже самое сработает для массивов и др обьектных значений
 
 
+// ========= КЛЮЧЕВОЕ СЛОВО VAR =========
+
+// Использование переменной до ее обьявления
+
+// "use strict"
+
+age = 30;
+console.log(age);
+
+var age;
+
+// Области видимости переменной
+
+function testBlockLet() {
+    let myAgeLet = 30;
+}
+// Пременная НЕ видна за пределами блока console.log(myAgeLet);
+
+function testBlockVar() {
+    var myAgeVar = 30;
+}
+
+testBlockVar();
+
+// Переменная не видна заа пределами блока console.log(myAgeVar);
+
+
+
+if (true) {
+    let sizeLet = 50;
+}
+
+// Пременная НЕ видна за пределами блока console.log(sizeLet);
+
+if (true) {
+    var sizeVar = 50;
+}
+
+// Переменная ВИДНА за пределами блока console.log(sizeVar);
