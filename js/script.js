@@ -1,22 +1,18 @@
-// Стоит ли каждый раз создавать новую переменную или, все таки, переназначить обьявленную ранее?
+// Динамическая типизация
+/*
+JavaScript является динамически типизированым. То есть тип данных 
+переменной меняется динамически в момент присвоения либо смены ее 
+значения. А не в момент обьявления.
+*/
 
-let userName = '';
-// ... некий код с использованием userName...
+let userName;// Обьявляем переменную
 
-userName = 30;
+console.log(typeof userName);
 
-//  ... некий код с использованием userName...
+userName = "Alex"; // Строка (String)
 
-userName = 'Kharkiv';
+console.log(typeof userName);
 
-//  ... некий код с использованием userName...
+userName = 58; // Число (Number)
 
-// ???????
-
-// НУЖНО СОЗДАВАТЬ ОТДЕЛЬНУЮ ПЕРЕМЕННУЮ ДЛЯ КАЖДОГО ОТДЕЛЬНОГО ЗНАЧЕНИЯ
-
-let userName = 'Alex';
-let userAge = 30;
-let userAddress = 'Kharkiv';
-
-//  ... некий код с использованием userName, userAge, userAddreess...
+console.log(typeof userName);
