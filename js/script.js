@@ -1,21 +1,16 @@
-// Null
+// Boolean 
 /*
-Null, также как и Undefined, содержит одно значение Null
+Boolean - это Булевый или логический тип данных.
+Может принимать только два значения: true (истина) и false (ложь).
 */
+//
+// let willYouMarryMe = true;
+// if(willYouMarryMe) {
+//     console.log(':)');
+// } else {
+//     console.log(':(');
+// }
 
-// Пример
-// let userName = null;
-// console.log(userName);
-// однако в JS, Null не является ссылкой на несуществующий обьект либо нулевым указателем,
-// это специальное значение кот представляет собой ничего
-// Null не равно Undefined
-
-// Пример 
-// Попытка обратиться к обьекту которого нет 
-let block = document.querySelector('.block');
-
-// получаем Null
-console.log(block);
-
-//Вернем тип object
-console.log(typeof block);
+// Так же можно использовать с операторами сравнения
+let trueOrFalse = 58 < 18;
+console.log(trueOrFalse);
