@@ -1,37 +1,27 @@
-// Number (Число)
+// BigInt
 /*
-Числовой тип данных представляет значения как в виде целых чисел, 
-так и в виде чисел с плаввющей запятой
+B JavaScript тип данных "number" не может содержать числа больше
+чем 9007199254740991, или меньше, чем -9007199254740991.
 */
 
-let userAge = 20;
-let userHeight = 1.83;
-console.log(userAge);
-console.log(typeof userAge);
-console.log(userHeight);
-console.log(typeof userHeight);
-/* Но не только числа может возвращать тип NUmber,
-существуют такие специальные числовые значения, такие как:
-Infinity, -Infinity , NaN
-*/
+// BigInt
+// const bigInteger = 123456789012345678901234567890n;
+// console.log(typeof bigInteger);
 
-// Infinity 
-// Это математическа бесконечность, которая больше любго числа
-// let getInfinity = 58 / 0;
-// console.log(getInfinity);
-// console.log(typeof getInfinity);
 
-// -Infinity
-/* 
-let getInfinity = -58 / 0;
-console.log(getInfinity);
-console.log(typeof getInfinity);
-*/
+// String
+let userName = "Aleksandr";
+console.log(typeof userName);
 
-// NaN
-// Означает вычислительную ошибку - результат неправильной либо неопределенной математической операции
- 
+let userNameV2 = 'Aleksandr';
+console.log(typeof userNameV2);
+let userNameV3 = `Aleksandr`;
+console.log(typeof userNameV3);
+ /* двойные и одинарные кавычки являются простыми и в ДЖС
+ между ними нет никакой разницы. А вот обратные кавычки 
+ позволяют нам использовать дополнительный функционал и встраивать 
+ в строку некие выражения с помощью конструкции ${}   */
 
-/*
-если где-то в математическом выражении есть NaN, то результатом вычислений с его участием будет NaN.
-*/
+ let userAge = 30;
+ let userAgeInfo = `Возраст: ${userAge}`;
+ console.log(userAgeInfo);
