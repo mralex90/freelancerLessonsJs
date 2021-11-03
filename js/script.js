@@ -1,23 +1,56 @@
-// Object
+// Преобразование типов
 
-let userInfo = {
-    name: 'Oleks',
-    age: 30
-}
-console.log(userInfo);
-console.log(typeof userInfo);
+// Строковое преобразование
+// let userAge = 58;
+// console.log(userAge);
+// console.log(typeof userAge);
+
+// userAge = String(userAge);
+
+// console.log(userAge);
+// console.log(typeof userAge);
+
+// let userTrue = true;
+// console.log(userTrue);
+// console.log(typeof userTrue);
+
+// userTrue = String(userTrue);
+// console.log(userTrue);
+// console.log(typeof userTrue);
 
 
-// Symbol
-// Это уникальный идентификаатор обьекта. Создаются новые символы с помощью одноименной ф-ии.
- let id = Symbol("id");
- console.log(typeof id);
 
- // Function
-/*
-По сути - тот же обьект для удобства выведенный в отдельный тип для более простого определения  
-*/
- let funcVariable = function name(params) {
-     //код ф-ии
-     console.log(typeof functionVariable);
- }
+// Численное преобразование
+// let userAge = "58";
+// console.log(userAge);
+// console.log(typeof userAge);
+
+// userAge = Number(userAge);
+
+// console.log(userAge);
+// console.log(typeof userAge);
+
+// let userAge = "Oleks";
+
+// userAge = Number(userAge);
+
+// console.log(userAge);
+// console.log(typeof userAge);
+
+
+// Пример автоматического преобразования без использования специальной ф-ии
+
+// let userAge = "60" / "2";
+// console.log(userAge);
+// console.log(typeof userAge);
+
+
+// Логическое преобразование
+let userAge = 58;
+console.log(userAge);
+console.log(typeof userAge);
+
+userAge = Boolean(userAge);
+
+console.log(userAge);
+console.log(typeof userAge);
