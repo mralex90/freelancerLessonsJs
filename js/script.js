@@ -1,56 +1,14 @@
-// Преобразование типов
+let userAge = 30;
+let userInfo = "Oleks ${userAge}";
 
-// Строковое преобразование
-// let userAge = 58;
-// console.log(userAge);
-// console.log(typeof userAge);
+let userHeight = 145 / 0;
+//вернется значение NaN
+console.log(userHeight);
 
-// userAge = String(userAge);
+let userName;
+// вернется тип данных Null
+console.log(typeof userName);
 
-// console.log(userAge);
-// console.log(typeof userAge);
-
-// let userTrue = true;
-// console.log(userTrue);
-// console.log(typeof userTrue);
-
-// userTrue = String(userTrue);
-// console.log(userTrue);
-// console.log(typeof userTrue);
-
-
-
-// Численное преобразование
-// let userAge = "58";
-// console.log(userAge);
-// console.log(typeof userAge);
-
-// userAge = Number(userAge);
-
-// console.log(userAge);
-// console.log(typeof userAge);
-
-// let userAge = "Oleks";
-
-// userAge = Number(userAge);
-
-// console.log(userAge);
-// console.log(typeof userAge);
-
-
-// Пример автоматического преобразования без использования специальной ф-ии
-
-// let userAge = "60" / "2";
-// console.log(userAge);
-// console.log(typeof userAge);
-
-
-// Логическое преобразование
-let userAge = 58;
-console.log(userAge);
-console.log(typeof userAge);
-
-userAge = Boolean(userAge);
-
-console.log(userAge);
-console.log(typeof userAge);
+let userSize = "45" / "8";
+// вернется тип данных Number
+console.log(typeof userSize);
