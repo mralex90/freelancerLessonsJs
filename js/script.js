@@ -1,27 +1,14 @@
-// BigInt
-/*
-B JavaScript тип данных "number" не может содержать числа больше
-чем 9007199254740991, или меньше, чем -9007199254740991.
-*/
+let userAge = 30;
+let userInfo = "Oleks ${userAge}";
 
-// BigInt
-// const bigInteger = 123456789012345678901234567890n;
-// console.log(typeof bigInteger);
+let userHeight = 145 / 0;
+//вернется значение NaN
+console.log(userHeight);
 
-
-// String
-let userName = "Aleksandr";
+let userName;
+// вернется тип данных Null
 console.log(typeof userName);
 
-let userNameV2 = 'Aleksandr';
-console.log(typeof userNameV2);
-let userNameV3 = `Aleksandr`;
-console.log(typeof userNameV3);
- /* двойные и одинарные кавычки являются простыми и в ДЖС
- между ними нет никакой разницы. А вот обратные кавычки 
- позволяют нам использовать дополнительный функционал и встраивать 
- в строку некие выражения с помощью конструкции ${}   */
-
- let userAge = 30;
- let userAgeInfo = `Возраст: ${userAge}`;
- console.log(userAgeInfo);
+let userSize = "45" / "8";
+// вернется тип данных Number
+console.log(typeof userSize);
