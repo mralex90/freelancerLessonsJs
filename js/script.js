@@ -1,14 +1,23 @@
-let userAge = 30;
-let userInfo = "Oleks ${userAge}";
+// Специальные возможности операторов
 
-let userHeight = 145 / 0;
-//вернется значение NaN
-console.log(userHeight);
+// Примечание оператора сложения к строкам
+let resultOne = "Mr" + "Alex" + "Bond" + " " + "90"; 
+console.log(resultOne);
+/* 
+Если в выражении есть строка, то есть если хотя бы
+один операнд будет строкой, то конечный результат 
+тоже будет строкой
+*/
+let resultTwo = "Alex " + 58;
+console.log(resultTwo); 
+console.log(typeof resultTwo); 
 
-let userName;
-// вернется тип данных Null
-console.log(typeof userName);
+// Порядок значения не имеет 
+let resultThree = 58 + " Alex";
+console.log(resultThree);
+// Казусы
+let resultFor = 2 + "2";
+console.log(resultFour);
 
-let userSize = "45" / "8";
-// вернется тип данных Number
-console.log(typeof userSize);
+//Операции до сложения со строкой выполняются как обычно
+letresult
