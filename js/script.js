@@ -1,73 +1,49 @@
-// Специальные возможности операторов
+// Оператор присвоения 
 
-// Примечание оператора сложения к строкам
-// let resultOne = "Mr" + "Alex" + "Bond" + " " + "90"; 
-// console.log(resultOne);
-/* 
-Если в выражении есть строка, то есть если хотя бы
-один операнд будет строкой, то конечный результат 
-тоже будет строкой
-*/
-// let resultTwo = "Alex " + 58;
-// console.log(resultTwo); 
-// console.log(typeof resultTwo); 
+let a = 1 + 2;
+let b = 2;
 
-// Порядок значения не имеет 
+let result = 8 - (a = b + 3);
+console.log("Результат в скобках: " + a);
+console.log("Общий результат: " + result);// так записывать не рекомендуется из-за низкой читаемости кода
 
-// Казусы
-// let resultFour = 2 + "2";
-// console.log(resultFour);
-// console.log(typeof resultFour);
-
-//Операции до сложения со строкой выполняются как обычно
-// let resultFive = 58 - 20 + " Alex";
-// console.log(resultFive);
-
+// Присваивание по цепочке
 /*
-Сложение и преобразование строк - это особенность бинарного оператора сложения.
-Другие арифметические операторы работают только с числами,
-соответственно пребразуют все операнды в числа.
-*/
- // Примеры
-// Работа других операторов
-let resultOne = "25" - 5;
-console.log(resultOne);
-console.log(typeof 
-    resultOne);
-// или
-
-let resultTwo = 10 * "80";
-console.log(resultTwo);
-console.log(typeof resultTwo);
-
-// Недопустимая операция
-let resultThree = 3 * "Alex";
-console.log(resultThree); // Вернет NaN
-console.log(typeof resultThree); 
-/*
-Оператор сложения существует и в унарной форме.
-И в этом случае он выполняет роль преобразователя в число
-*/
- 
-// Со строками
-let result1 = +'25';
+let result1 = result2 = result3 = 1 + 2;
 console.log(result1);
-console.log(typeof result1);
-
-// С числами
-let result2 = +10;
 console.log(result2);
-console.log(typeof result2);
+console.log(result3);
+*/
+
+// Более понятная запись
+let result1 = 1 + 2;
+
+result2 = result1;
+result3 = result2;
+
+console.log(result1);
+console.log(result2);
+console.log(result3);
 
 
-// Унарный оператор сложения +
+// Сокразенная запись вычислений с присваиванием
+// let users = 5;
+// users = users + 3;
+// users = users * 2;
 
-// Пример 
-let users = "25";
-let admins = "10";
-console.log(users + admins);
+// Можно записать так
 
-console.log(+users + +admins);
+// let users = 5;
+// console.log(users);
+// users += 3;
+// console.log(users);
+// users *= 2;
+// console.log(users);
 
-// Более длинная запись
-console.log(Number(users) + Number(admins));
+// Так же это работает и с другими операторами
+
+// Приоритет такой записи такой же как и у обычного оператора присвоения
+let users = 5;
+console.log(users);
+users += 1 + 2; // В первую очередь выполнится (1 + 2), а уже потом сложение и присвоение(+=)
+console.log(users);
