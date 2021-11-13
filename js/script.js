@@ -1,18 +1,32 @@
-// Планирование setTimeout & setInterval
+// Применение функций
 
-let result = 0;
-function showNumber(num) {
-    result += num;
-    console.log(result);
-    if (result === 5) {
-        clearInterval(timeId);
-    }
+//Функция соеденения строк
+function createMessage(text, name) {
+    return `${text}, ${name}!`;
 }
-let timeId = setInterval(showNumber, 1000, 1);
 
+// Функция вывода в консоль
+function showMessage(message) {
+    console.log(message);
+}
+// Обьединяющая функция, вызывает обе функции
+function initMessage(text, name) {
+    showMessage(createMessage(text, name));
+}
+
+initMessage('Hello', 'Oleksandr');
 /*
-Точно такая же ситуация существует и для setInterval.
-Опять же присваиваем setInterval некой переменной и дальше при 
-определенном условии пишем clearInterval и указываем имя переменной.
-И все это дело у нас остановится.
+Стоит стремиться к тому, чтобы ф-ии были простими и короткими 
+и выполняли только какоето одно действие.
+Если нам нужно выполнить несколько ф-ий одновременно - мы можем 
+использовать еще одну ф-ию для обьеденения.
+В примере мы видим 3 функции:
+1) createMessage - создает строку из параметров 
+2) showMessage - выводит готовую строку в консоль
+3) initMessage - обьединяет эти два действия, передавая showMessage 
+    createMessage с некоторыми параметрами.
+    В итоге нам достаточно вызвать одну ф-ию initMessage передав 
+    некие строки. Но если нам понадобится, то где-то в другом месте 
+    программы мы можем отдельно вызвать каждую ф-ию, которая выполнит 
+    свое предназначение.
 */
