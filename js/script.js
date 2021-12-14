@@ -1,23 +1,58 @@
 // Поиск в массиве 
 
-// Методы indexOf/lastIndexOf и includes аналоги строковым методам
-/*
-1.  arr.indexOf(item, from) - ищет item, начиная с индекса from, и 
-    возвращает индекс, на котором был найден искомый элемент, 
-    в противном случае - 1.
-2.  arr.lastIndexOf(item, from) - то же самое, но ищет справа налево.
-3.  arr.includes(item, from) - ищет item, начиная с индекса from, 
-    и возвращает true, если поиск успешен.
+// find u findIndex
+/* В случае когда у нас массив, точнее его элементы являются обьектами нужно 
+пользоваться этими методами. Эти методы обеспечивают поиск в массиве обьектов 
+с определенным условием и возвращает элемент первый попавшийся который удовлетворит 
+этому условию.
+
+
+// Синтаксис
+let result = arr.find(function(item, index, array) {
+    // если true - возвращается текущий элемент и перебор прерывется
+    // если все итерации оказались ложными, возвращается undefined
+});
 */
 
-let arr = ['Aleks', 'Ivan', 'Olya',];
+let arr = [
+    { name: 'Aleks', age: 31},
+    { name: 'Ivan', age: 18},
+    { name: 'Olya', age: 'No comment'},
+]
 
-// indexOf
-console.log(arr.indexOf('Ivan'));
-console.log(arr.indexOf('Aleks'));
-console.log(arr.indexOf('Ivan', 2));
+let resultOne = arr.find(function (item, index, array) {
+    return item.age === 18;
+}); // можно записать это же с помощью стрклочной ф-ии
 
-// includes
-console.log(arr.includes('Ivan'));
-console.log(arr.includes('Aleks'));
-console.log(arr.includes('Ivan', 2));
+// let resultOne = arr.find(item => item.age === 18);
+console.log(resultOne);
+
+// findIndex   - возвращает не элемент, а его индекс/ключ
+let resultTwo = arr.findIndex(item => item.age === 18);
+console.log(resultTwo);
+
+//////////
+
+// filter
+/*
+Этот метод очень похож на метод find, но разница в том что он не прекращает 
+свою работу в тот момент, когда удовлетворено указанное условие, а продолжает ее, 
+и соответственно, возвращает массив из всех элементов которые удовлетворяют 
+указанному условию.
+
+Метод ищет все элементы, на которых функция-колбэк вернет true.
+let result = arr.filter(function (item, index, array) {
+    // если true - элемент добавляется к результату, и перебор продолжается
+    // возвращается пустой массив в случае, если ничего не найдено
+});
+*/
+
+let arr1 = [
+    { name: 'Aleks', age: 31},
+    { name: 'Ivan', age: 18},
+    { name: 'Olya', age: 'No comment'},
+]
+let result = arr1.filter(function (item, index, array) {
+    return item.age >= 18;
+});
+console.log(result);
