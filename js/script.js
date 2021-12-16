@@ -1,32 +1,56 @@
-//  Сортировка массивов
 
-// Метод sort(fn)
-//сортирует масств на месте, меняя в нем порядок элементов.
+// Преобразование массивов
 
-// Сортировка слов 
-let arrOne = [ 'Ivan', 'Olya', 'Aleks',];
-console.log(arrOne.sort());
+// Метод map
+/*
+вызывает функцию для каждого элемента массива и возвращает новый 
+массив с результатами выполнения этой функции.
 
-// Сортировка чисел
-let arrTwo = [8, 22, 1,];
-console.log(arrTwo.sort());
+let result = arr.map(function(item, index, array) {
+    возвращается новое значение вместо элемента
+});
+*/
 
-// По умолчанию элементы сортируются как строки. Для строк применяется 
-// лексикографический порядок, и действительно выходит, что "8" > "22".
-console.log("8" > "22");
+let arr = ["Alex", "Ivan", "Olya",];
 
-// Фунуция сортировки
-function compareNumeric(a, b) {
-    console.log('Сравниваем ${a} и ${b}');
-    if (a > b) return 1;
-    if (a == b) return 0;
-    if (a < b) return -1;
-
-    // return a - b
-}
-// console.log(arrTwo.sort((a, b) => a -b));
-
-console.log(arrTwo.sort(compareNumeric));
+let result = arr.map(function(item, index, array) {
+    return item[0];
+});
+//let result = arr.map(item => item[0]);
+console.log(arr);
+console.log(result);
 
 
-////// 23:06
+/////// Методы split & join
+
+/*
+Метод split преобразовывает строку в массив по заданному разделителю
+Синтаксис: str.split(delim)
+*/
+
+let str = 'Aleks,Ivan,Olya';
+
+let arr1 = str.split(',');
+console.log(arr1);
+
+// Можно ограничить количество обьектов которые попадут в массив
+
+let arr2 = str.split(',', 2);
+console.log(arr2);
+
+/*
+Метод join работает наоборот - преобразовывает массив в строку с заданным
+разделителем.
+Синтаксис: arr.join(glue) 
+*/
+
+let arr3 = ['name1', 'name2', 'name3',];
+let str1 = arr3.join(',');
+console.log(str1);
+// при использовании join мы можем указать разделитель
+
+
+// Получение строки из массива
+let arr31 = ['Name1', 'Name2', 'Name3'];
+console.log(String(arr31));
+// при простом переводе в строку мы не может указать разделитель и он всегда будет зпт
