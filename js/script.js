@@ -30,3 +30,32 @@ console.log(childNodes);
 // Получаем коллекцию всех дочерних элементов
 const bodyChildren = bodyElement.children;
 console.log(bodyChildren);
+
+// Первый и последний
+const firstChild = bodyElement.firstElementChild;
+const lastChild = bodyElement.lastElementChild;
+console.log(firstChild);
+console.log(lastChild);
+
+// Соседние и родительский элементы
+const previousSibling = bodyElement.previousElementSibling;
+const nextSibling = bodyElement.nextElementSibling;
+const parentElement = bodyElement.parentElement;
+
+console.log(previousSibling);
+console.log(nextSibling);
+console.log(parentElement);
+
+/*
+Итог по навигационным свойствам по элементам.
+
+У нас есть обьект БОДИ, для того чтобы обратиться к его предидущему жлементу мы мы исползуем 
+"previousElementSibling" и получим ХЭД. Если мы хотим обрать=иться к следующему элементу этого обьекта 
+нам нужно использовать "nextElementSibling" и в данном случае мы получим НАЛ, так как после БОДИ 
+ничего нет. Если мы хотим получить непосредственно родителя - используем "parentElement", и 
+получим обьект ХТМЛ со всем содержимым. 
+Если мы хотим обратиться ко всем дочерним обьектам нашего БОДИ - используем "children" и получим 
+эти все элементы.
+Если мы хотим обратиться к первому дочернему элементу - используем "firstElementChild" и получим Н1.
+Если мы хотим получить последний дочерний элемент - используем "lastElementChild" и получим тэг СКРИПТ.
+*/
