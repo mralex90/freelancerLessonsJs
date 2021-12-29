@@ -7,8 +7,23 @@
     <title>Document</title>
 </head>
 <body>
-    <h1></h1>
-
+    <h1>Работа с DOM</h1>
+    <h3>#13</h3>
+    <div class="lesson">
+        <div class="lesson__text">Text</div>
+        <ul name="list" class="lesson__list">
+            <li class="lesson__item-list lesson__item-list_red">Point #1</li>
+            <li id="listItem" class="lesson__item-list">Point #2</li>
+            <li data-item="40" class="lesson__item-list">Point #3
+                <ul class="lesson__item-sub-list">
+                    <li class="lesson__item-sub-list">Subpoint #1</li>
+                    <li data-item="85" class="lesson__item-sub-list">Subpoint #2</li>
+                    <li class="lesson__item-sub-list">Subpoint #3</li>
+                </ul>
+            </li>
+            <li class="lesson__item-list lesson__item-list_blue">Point #4</li>
+        </ul>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
