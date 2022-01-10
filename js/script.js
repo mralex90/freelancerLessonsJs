@@ -1,13 +1,20 @@
 
-// Методы вставки insertAdjacentHTML/Text/Element
-// lesson__list - это наш обьект 
+// DOM
+// Изменение документа
 
-// beforebegin  --- вставить до нашего обьекта
-<ul class="lesson__list">
-    {/* afterbegin --- вставить внутрь обьекта перед содержимым */}
-    <li>Point #1</li>
-    <li>Point #2</li>
-    <li>Point #3</li>
-    {/* beforeend  --- вставить внуть обьекта после содержимого */
-</ul>
-// afterend --- втавить после нашего обьекта
+// Перенос Элемента
+
+/*
+Мы можем вставлять не только новые узлы, но и переносить 
+существующие. И делать это можем с помощью обычных методов 
+вставки. Потому что все методы вставки автоматически удаляют узлы 
+со старых мест.
+*/
+
+// Получаем обьект
+const lessonBlock = document.querySelector('.lesson');
+// Получаем обьект
+const title = document.querySelector('h3');
+
+// Переносим title в кoнец блока lessonBlock
+lessonBlock.append(title);
