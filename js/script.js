@@ -2,27 +2,19 @@
 // DOM
 // Изменение документа
 
-// Mетоды вставки
+// Перенос Элемента
+
+/*
+Мы можем вставлять не только новые узлы, но и переносить 
+существующие. И делать это можем с помощью обычных методов 
+вставки. Потому что все методы вставки автоматически удаляют узлы 
+со старых мест.
+*/
 
 // Получаем обьект
-const textElement = document.querySelector('.lesson__text');
+const lessonBlock = document.querySelector('.lesson');
+// Получаем обьект
+const title = document.querySelector('h3');
 
-// Создание нового элемента (тега)
-const newElement = document.createElement('div');
-
-// Наполняем новый элемент
-newElement.innerHTML = `Learn JS <span class="yellow">React</span>!`;
-
-// Вставка нескольких фрагментов сразу
-textElement.append(newElement, "Hello!");
-
-/*
-// Можно вставлять строку
-textElement.append(`Learn JS <span class="yellow">React</span>!`);
-*/
-/*
-Другими словами, строки вставляются безопасным способом, как это 
-делает textContent. Поэтому эти методы могут использоваться только 
-для вставки ДОМ-узлов или текстовых фрагментов. А чтоЮ если мы хотим 
-вставить ХТМЛ именно "как ХТМЛ", со всемитегами и прочим, как это делает innerHTML?
-*/
+// Переносим title в кoнец блока lessonBlock
+lessonBlock.append(title);
