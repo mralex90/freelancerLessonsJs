@@ -2,19 +2,32 @@
 // DOM
 // Изменение документа
 
-// Перенос Элемента
+// Клонирование узлов cloneNode
+
+// Если нужен не перенос а именно копия элемента
+
+// Получаем обьект
+const textElement = document.querySelector('.lesson__text');
+// Клонирование без дочерних элементов
+// const cloneTextElement = textElement.cloneNode();
+
+// Глубокое копирование вместе с содержимым
+const cloneTextElement = textElement.cloneNode(true);
+
+const lessonBlock = document.querySelector('.lesson');
+lessonBlock.append(cloneTextElement);
 
 /*
-Мы можем вставлять не только новые узлы, но и переносить 
-существующие. И делать это можем с помощью обычных методов 
-вставки. Потому что все методы вставки автоматически удаляют узлы 
-со старых мест.
+Если наш клон скопировался без сожержимого, то нужно при клонировании в () написать ТРУ,
+то это вызовет глубокое клонирование со все содержимым.
 */
 
-// Получаем обьект
-const lessonBlock = document.querySelector('.lesson');
-// Получаем обьект
-const title = document.querySelector('h3');
+////////// Удаление узлов
 
-// Переносим title в кoнец блока lessonBlock
-lessonBlock.append(title);
+// Получаем обьект
+const textElement = document.querySelector('.lesson__text');
+// Удаляем обьект
+textElement.remove();
+/*
+
+*/
