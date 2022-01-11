@@ -1,33 +1,34 @@
 
 // DOM
-// Изменение документа
 
-// Клонирование узлов cloneNode
+// Стили и классы
 
-// Если нужен не перенос а именно копия элемента
+// Управление классами 
+// Используются свойства className и classList
 
-// Получаем обьект
-const textElement = document.querySelector('.lesson__text');
-// Клонирование без дочерних элементов
-// const cloneTextElement = textElement.cloneNode();
+// Изменение класса является одним из наиболее часто используемых действий в JS/
 
-// Глубокое копирование вместе с содержимым
-const cloneTextElement = textElement.cloneNode(true);
+// Свойствo className
 
-const lessonBlock = document.querySelector('.lesson');
-lessonBlock.append(cloneTextElement);
+// Получаем елемент
+const element = document.querySelector('.lesson__item-list__red');
 
+// Получаем имена классов
+const elementClassNames = element.className;
+console.log(elementClassNames);
+
+// Перезаписываем имя класса
+element.className = "red";
 /*
-Если наш клон скопировался без сожержимого, то нужно при клонировании в () написать ТРУ,
-то это вызовет глубокое клонирование со все содержимым.
-*/
+Пример.
+Получаем обьект "element" с неким классом ".lesson__item-list__red'".
+Далее с помощью "className" мы получаем имена всех классов данного обьекта.
+Для эого обращаемся к самому обьекту, ставим точку и пишем "className".
+Выводим такую константу в консоль и видим, что у данного обьекта 
+два класса: 1) "lesson__item-list" и 2) "lesson__item-list__red'".
 
-////////// Удаление узлов
-
-// Получаем обьект
-const textElement = document.querySelector('.lesson__text');
-// Удаляем обьект
-textElement.remove();
-/*
-
+Но как можно этот класс изменить?
+Мы опять обращаемся к элементу, пишем "className" и присваиваем некое имя 
+класса. В чем же проблема? Проблема в том, что таким образом мы перезаписываем 
+все классы.
 */
