@@ -1,52 +1,34 @@
- 
-//Размеры окна браузера
-// clientWidht u clientHeight
 
-// Доступная ширина и высота окна
-const mainElement = document.documentElement;
-const mainElementWidth = mainElement.clientWidth;
-const mainElementHeight = mainElement.clientHeight;
+// Ширина и высота документа
+// включая прокрученную часть
 
-console.log(mainElementWidth);
-console.log(mainElementHeight);
-
+let scrollWidth = Math.max(
+    document.body.scrollWidth, document.documentElement.scrollWidth,
+    document.body.offsetWidth, document.documentElement.offsetWidth,
+    document.body.clientWidth, document.documentElement.clientWidth
+);
+let scrollHeight = Math.max(
+    document.body.scrollHeight, document.documentElement.scrollHeight,
+    document.body.offsetHeight, document.documentElement.offsetHeight,
+    document.body.clientHeight, document.documentElement.clientHeight
+);
+console.log(scrollWidth);
+console.log(scrollHeight);
 /*
-В ДЖС существует множество различных свойств с помощью которых мы можем получить 
-ин-ию об обьекте: его высоту, ширину и др. метрические характеристики. Для начала 
-поговорим об окне браузера и первым делом поймем как нам получить ширину и высоту 
-окна.
-Свойства clientWidht и clientHeight с помощью которых мы можем получить доступную 
-ширину и высоту окна соответственно.
-Доступная ширина или высота - область доступная нам для работы, т е от края браузера 
-до полосы прокрутки, если такая существует.
+Но что если нам нужно получить высоту или ширину всего документа включая 
+ту часть которую часть которую мы видим при скролле?
 
-Пример:
-Здесь в константу mainElement получаем сам обьект document.documentElement. 
-Фактически, мы обращаемся к тегу ХТМЛ. 
-Далее в соответствующие константы мы присваиваем следующее значение - обращаемся 
-к нащему элементу и используем соответсвующие свойства: clientWidht u clientHeight.
-Соответственно в этих константах сейчас будет содержатся ширина и высота доступная 
-для работы. 
-*/
+Для этого можем использовать такую конструкцию включающую с себя множество 
+свойств, о которых речь дальше пойдет. Но из-за разницы в браузерах и возможных 
+ошибках чаще всего используют именно такой подход - с помощью математической 
+функции Math.max() мы получаем максимальное значение из присудствующих. 
+Соответственно, в переменную scrollWidth мы получим актуальную ширину, а 
+в переменную scrollHeight - актуальную высоту.
+Выведя в консоль - мы получим вот такие два значения (940   2313).
+У нас нет горизонтального скролла, по-этому значение такое же как и при clientWidth, 
+а вот scrollHeight мы получаем очень большое значение (2313), если мы перейдем в ЭЛЕМЕНТ КОНСОЛИ, 
+и померяем наш РАППЕР (это див, в которой заключен весь контент на странице), то мы 
+как раз увидим это значение - 2313.
+Таким образом мы получаем полную высоту всего контента на странице.
 
-// -----------
-
-// Ширина и высота окна вместе с полосами прокрутки
-const windowWidth = window.innerWidth;
-const windowHeight = window.innerHeight;
-
-console.log(windowWidth);
-console.log(windowHeight);
-
-/*
-Так же в коде часто можно встретить свойства innerWidth и innerHeight,
-которые применены к обьекту "window". Это тоже ширина и высота окна 
-браузера, но вместе с полосами прокрутки.
-в примере создаем константы и присваиваем соответствующие значения, 
-выводим в консоль. Видим, что с помощью clientWidth для обьекта мы получаем 
-940 ширины, но innerWidth для "window" - мы получаем 957.
-Т. е. 940 - доступная для работы ширина, а 17 - это ширина полосы прокрутки.
-Стоит отметить, что чаще всего используется именно clientWidth и clientHeight 
-для обьекта documentElement, поскольку нас интересует именно доступные размеры 
-окна.
 */
