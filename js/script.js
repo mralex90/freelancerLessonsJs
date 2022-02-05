@@ -1,23 +1,24 @@
 
 // Основы событий мыши
 
-// Координаты: clientX/Y, pageX/Y
+// Наведение мыши: mouseover/out, mouseenter/leave
+
+// События mouseover/mouseout, relatedTarget
+/*
+Событие "mouseover" происходит в момент, когда курсор оказывается нал элементом, 
+а событие mouseout - в момент, когда курсор уходит с элемента.
+*/
 
 const blockForMouse = document.querySelector('.block-for-mouse');
 
-blockForMouse.addEventListener("mousemove", function (event) {
-    blockForMouse.innerHTML = 
-        `clientX - ${event.clientX} <br> clientY - ${event.clientY}`;
+blockForMouse.addEventListener("mouseover", function (event) {
+    blockForMouse.innerHTML = `Курсор над элементом`;
 });
 
+blockForMouse.addEventListener("mouseout", function (event) {
+    blockForMouse.innerHTML = `Курсор уходит с элемента`;
+});
 /*
-Движения мыши.
-Разберем событие "mousemove" - оно вызывается при каждом движении мыши над 
-определенным элементом.
-В примере есть поле для теста, его передали в константу и на него навесили 
-событие "mousemove" и что нужно сделать? - Нужно прям в него, вот в это поле 
-вывести координаты нашего курсора относительно окна браузера.
-Для этого используем clientX и clientY, опять же из обьекта события.
-
-Такое часто использется, например , при паралаксе
+Событие "mouseover" происходит в момент, когда курсор оказывается над обьектом, а 
+"mouseout" - когда курсор уходит с этого обьекта.
 */
