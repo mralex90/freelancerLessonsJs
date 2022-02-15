@@ -7,43 +7,32 @@
 Значение можно получить через свойство input.value(если это строка) 
 или input.checked(если это булево значение) для чекбоксов и радиокнопок.
 */
-
 const mainForm = document.forms.main;
 
-const mainFormInput = mainForm.nameInput;
-const mainFormTextarea = mainForm.nameTextarea;
+const mainFormRadioButtons = mainForm.nameRadio;
+const mainFormCheckBox = mainForm.nameCheck;
+const mainFormFile = mainForm.nameFile;
+
+// Получить значение поляtype radio
 /*
-// Получить значение (слдержание) поля
-console.log(mainFormInput.value);
-// Получить значение (содержимое) текстового поля
-console.log(mainFormTextarea.value);
+console.log(mainFormRadioButtons[0].value);
+console.log(mainFormRadioButtons[1].value);
+console.log(mainFormRadioButtons[0].checked);
+console.log(mainFormRadioButtons[1].checked);
 */
 
+// Получить значение поля type checkbox
 /*
-// Присвоить значение (содержание) поля
-mainFormInput.value = "Пока";
-// Присвоить значение (содержание) текстового поля
-mainformTextarea.value = "До встречи";
+console.log(mainFormCheckBox.value);
+console.log(mainFormCheckBox.checked);
 */
 
+// Получить значение поля type file
+console.log(mainFormFile.value);
+//////////////////////////////////////////////////////////////////////
 /*
-Пример:
-Получаем в константу mainForm нашу основную форму, далее получаем поле 
-ввода input (mainFormInput) и поле ввода textarea (mainFormTextarea).
-Для того, чтобы получить их значения мы може использовать свойство value, 
-но в консоли мы увидим пустые строки, так как в данный момент эти поля 
-не заполнены. Чтобы это исправить нужно перейти в ХТМЛ и для тега input 
-с типом text. В этом нам поможет атрибут value. Сохраняем, теперь наш ДЖС 
-по запросу mainFormInput.value вернет это значение.
-
-Что же касается текстового поля ввода? 
-Для этого мы не будем использовать атрибут value, а будем использовать сам 
-тег, так как у него есть закрываеющий элемент, и между открывающим и закрывающим 
-элементом мы можем что-нибудь написать. Сохраняем и видим тот же результат.
-
-Если же мы хотим заполнить или изменить значение того или иного поля из ДЖС, 
-то следует действовать следующим образом: 
-обратиться к полю, поставить точку, написать value и присвоить ту или иную 
-строку. Например, текстовому полю input мы присвоим строку "Пока", а textarea 
-прсвоим "до встречи". Сохраняем и у нас все отлично работает
+Input с типом file.
+Это такая штука, где мы можем выбрать например какую-то картинку или любой другой 
+файл. Здесь можем получить значение с помощью "value", в данный момент оно пустое, 
+никакой файл не выьран.
 */
