@@ -1,38 +1,49 @@
 
-// Элементы форм
+// Элементы форм 
 
-// Работа с input и textarea
-
+// Работа с select и option
 /*
-Значение можно получить через свойство input.value(если это строка) 
-или input.checked(если это булево значение) для чекбоксов и радиокнопок.
+Элемент <select> имеет 3 важных свойства:
+select.options - коллекция из подэлементов <option>,
+select.value - значение выбраного в данный момент <option>,
+select.selectedIndex - номер выбранного <option>.
+
+Они дают три разных способа устранить значение в <select>:
+Найти соответствующий элемент <option> и установить в option.selected 
+значение true.
+Установить в select.value значение нужного <option>.
+Установить в select.selectedIndex номер нужного <option>.
+
+Первый способ наиболее понятный, но (2) и (3) являются более удобными в работе.
 */
+
 const mainForm = document.forms.main;
+const mainFormSelect = mainForm.nameSelect; /* в эту константу получаем элемент нашего списка */
 
-const mainFormRadioButtons = mainForm.nameRadio;
-const mainFormCheckBox = mainForm.nameCheck;
-const mainFormFile = mainForm.nameFile;
+// Чтобы Получить все options - обращаемся к списку, ставим точку и пишем options
+// При выводе в консоль получим коллекцию наших обьектов
+console.log(mainFormSelect.options);
 
-// Получить значение поляtype radio
-/*
-console.log(mainFormRadioButtons[0].value);
-console.log(mainFormRadioButtons[1].value);
-console.log(mainFormRadioButtons[0].checked);
-console.log(mainFormRadioButtons[1].checked);
+/*  Получить индекс выбранного option
+Используем selectedIndex, в итоге получаем 0, т.е. нулевой индекс - первый индекс в ХТМЛ у нас 
+выбран, поэтому мы получаем это значение.
 */
+const mainFormSelectIndex = mainFormSelect.selectedIndex;
+console.log(mainFormSelectIndex);
 
-// Получить значение поля type checkbox
-/*
-console.log(mainFormCheckBox.value);
-console.log(mainFormCheckBox.checked);
+/* Получить значение выбранного option,
+т.е. значение атрибута value, мы используем свойство value и получаем 1. Именно это указано в примере в ХТМЛ.
 */
+const mainFormSelectValue = mainFormSelect.value;
+console.log(mainFormSelectValue);
 
-// Получить значение поля type file
-console.log(mainFormFile.value);
-//////////////////////////////////////////////////////////////////////
+/* Получить текст выбранного option, 
+тогда обращаемся к нашему select, пишем options, но, в квадратных скобках указываем индекс выбранного 
+option. Далее ставим точку и пишем text. При выводе в консоль и получим 20, а именно текст выбранного option
+*/
+const mainFormSelectText = mainFormSelect.options[mainFormSelectIndex].text;
+console.log(mainFormSelectText);
+
 /*
-Input с типом file.
-Это такая штука, где мы можем выбрать например какую-то картинку или любой другой 
-файл. Здесь можем получить значение с помощью "value", в данный момент оно пустое, 
-никакой файл не выьран.
+11/37
 */
