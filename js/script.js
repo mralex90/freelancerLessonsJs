@@ -2,37 +2,37 @@
 // Элементы форм 
 
 // Работа с select и option
-/*
-Элемент <select> имеет 3 важных свойства:
-select.options - коллекция из подэлементов <option>,
-select.value - значение выбраного в данный момент <option>,
-select.selectedIndex - номер выбранного <option>.
-
-Они дают три разных способа устранить значение в <select>:
-Найти соответствующий элемент <option> и установить в option.selected 
-значение true.
-Установить в select.value значение нужного <option>.
-Установить в select.selectedIndex номер нужного <option>.
-
-Первый способ наиболее понятный, но (2) и (3) являются более удобными в работе.
-*/
 
 const mainForm = document.forms.main;
 const mainFormSelect = mainForm.nameSelect;
 
-// Выбрать некий option
-// mainFormSelect.options[1].selected = true;  ///  1)
-// mainFormSelect.selectedIndex = 1;           ///  2)
-// mainFormSelect.value = 2;                   ///  3)
-
+// Добавить новую опцию 
+// new Option добавляется через такую конструкцию:
+// option = new Option(text, value, defaultDelected, selected);
 /*
-Если мы хотим влиять на значение элемента select из ДЖС, то мы можем это сделать 
-одним из следующих способов:
+Параметры:
+text - текст внутри <option>, 
+value - значение,
+defaultSelected - если true, то ставится HTML - атрибут selected,
+selected - если true, то элемент <option> будет выбраным.
 
-1) Во-первых, обратиться к конкретному option, далее свойство selected присвоить true,
-    и теперь у нас будет выбран второй option.
-2) То же самое можно сделать просто изменив selectedIndex, (напр. был 0, указываем 
-    1 и опять же у нас будет выбран второй пункт).
-3) Также мы просто можем повлиять на value-назначение нашего selected, и здесь указать 
-    значение какого же option нам нужно (напр. указываем 2 и у нас опять выбран второй).
+Тут может быть небольшая путаница с defaultSelected и selected.
+Все просто: defaultSelected задает HTML-атрибут, 
+его можно получить как option.getAttribute('selected'), 
+а selected - выбрано значение или нет, 
+именно его важно поставить правильно.
+Впрочем, обычно ставят оба этих значения в true или не ставят вовсе(т.е. false).
+*/
+
+// Пример:
+let newOption = new Option("100", "4", false, false);
+mainFormSelect.append(newOption);
+/*
+В переменную newOption создаем новый обьект "Option".
+Текст (1) у него будет "100", значение (2) у него будет "4", и (3) он не будет выбран 
+и HTML-атрибута (4) selected у него не будет и он не будет выбран.
+В итоге, мы добавляем этот новый обьект в наш select (mainFormSelect).
+У нас должен появиться новый обьект option с нужными нам параметрами.
+Если мы хотим чтобы этот обьект был выбран, то (3) и (4) меняем на true.
+Теперь у нас сразу выбран наш новорожденный option/
 */
