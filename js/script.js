@@ -6,33 +6,26 @@
 const mainForm = document.forms.main;
 const mainFormSelect = mainForm.nameSelect;
 
-// Добавить новую опцию 
-// new Option добавляется через такую конструкцию:
-// option = new Option(text, value, defaultDelected, selected);
-/*
-Параметры:
-text - текст внутри <option>, 
-value - значение,
-defaultSelected - если true, то ставится HTML - атрибут selected,
-selected - если true, то элемент <option> будет выбраным.
+// Мультивыбор
 
-Тут может быть небольшая путаница с defaultSelected и selected.
-Все просто: defaultSelected задает HTML-атрибут, 
-его можно получить как option.getAttribute('selected'), 
-а selected - выбрано значение или нет, 
-именно его важно поставить правильно.
-Впрочем, обычно ставят оба этих значения в true или не ставят вовсе(т.е. false).
+/*
+Элемент select можно переключить в режим мультивыбора. 
+Это когда можно выбрать не только один option, а сразу несколько.
+Для этого нам нужно установить атрибут multiple для select.
+Также мы можем уже атрибут selected указывать не один раз, а несколько, 
+например 2 раза. И именно 2 option будут изначально выбраны.
 */
 
-// Пример:
-let newOption = new Option("100", "4", false, false);
-mainFormSelect.append(newOption);
+// получаемм все выбранные значения из select с multiple
+let selectedOption = Array.form(mainFormSelected.options)
+    .filter(option => option.selected)
+    .map(option => option.value);
+
+console.log(selectedOptions);
 /*
-В переменную newOption создаем новый обьект "Option".
-Текст (1) у него будет "100", значение (2) у него будет "4", и (3) он не будет выбран 
-и HTML-атрибута (4) selected у него не будет и он не будет выбран.
-В итоге, мы добавляем этот новый обьект в наш select (mainFormSelect).
-У нас должен появиться новый обьект option с нужными нам параметрами.
-Если мы хотим чтобы этот обьект был выбран, то (3) и (4) меняем на true.
-Теперь у нас сразу выбран наш новорожденный option/
+Пример:
+Здесь приведен пример получения всех выбрных option в конкретном select.
+Для этого используем метод массива "filter" и "map".
+В итоге мы получаем новый массив, в котором собраны значения всех выбраных 
+option. 
 */
