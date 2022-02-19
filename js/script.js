@@ -1,30 +1,42 @@
 
 // События форм и их элементов
 
-// События focusin и focusout
-// Работают точно также как и focus/blur но при этом всплывают
-
-const mainForm = document.forms.main;
-
-// Хотим установить фокус на форме при работе с элементами
-mainForm.addEventListener("focus", function (e) {
-    mainForm.classList.add('_active');
-});
-
-// Поймать на этапе погружения
-//, { "capture": true}
+// Событие change
+// Срабатывает по окончании изменения элемента.
 
 /*
-Пример:
-У нас есть форма, мы ее передали в константу mainForm и именно на нее 
-навешиваем событие "focus" при котором форма должна получить класс "_active".
-Но проблема в том, что событие "focus" не всплывает и когда мы фокусируемся 
-на каком-то элементе этой формы, всплытие не происходит и сама форма не получает 
-фокус.
-Решить это мы можем двумя способами:
-1) мы можем добавить параметр  { "capture": true} и поймать фокусировку 
-    формы в момент погружения 
-2) мы можем использовать также именно событие "focusin" в данном случае, которое 
-    всплывает и при этом работа будет выполнена точно так же.
-    Форма получила класс  "_active".
+В текстовых input и textarea работает также как и блур (потеря фокуса), 
+но в select, radio, checkbox и т.тд сразу.
+*/
+const mainForm = document.forms.main;
+const mainFormInput = mainForm.nameInput;
+const mainFormSelect = mainForm.nameSelect;
+const mainFormFile = mainForm.nameFile;
+
+mainFormInput.addEventListener("change", function (e) {
+    console.log('Сработало change в input');
+});
+mainFormSelect.addEventListener("change", function (e) {
+    console.log('Сработало change в select');
+});
+mainFormFile.addEventListener("change", function (e) {
+    console.log('Сработало change в file' );
+});
+/*
+Получаем несколт=ько полей - input, select и file.
+В каждый из них навешиваем событие change и соответствующую строку выводим 
+в консоль.
+
+Поле ввода Input.
+Вводим что-то, изменяем... ничего не происходит, но когда поле теряет фокус, 
+например кликаем в другое место, срабатывает событие change и именно в этот 
+момент поле изменено.
+
+Поле ввода Select.
+Мы что-то выбираем, и сразу же в этот момент срабатывает событие change на 
+select'е.
+
+Поле ввода File.
+Мы кликаем "Выберите файл", выбираем некий файл и в этот момент срабатывает 
+событие change. файл выбран.
 */
