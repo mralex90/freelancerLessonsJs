@@ -1,41 +1,42 @@
 
 // События форм и их элементов
 
-// События focus и blur
+// Событие change
+// Срабатывает по окончании изменения элемента.
 
+/*
+В текстовых input и textarea работает также как и блур (потеря фокуса), 
+но в select, radio, checkbox и т.тд сразу.
+*/
 const mainForm = document.forms.main;
 const mainFormInput = mainForm.nameInput;
+const mainFormSelect = mainForm.nameSelect;
+const mainFormFile = mainForm.nameFile;
 
-const mainFormInputPlaceholder = mainFormInput.placeholder;
-
-mainFormInput.addEventListener("focus", function (e) {
-    mainFormInput.placeholder = "";
+mainFormInput.addEventListener("change", function (e) {
+    console.log('Сработало change в input');
 });
-mainFormInput.addEventListener("blur", function (e) {
-    mainFormInput.placeholder = mainFormInputPlaceholder;
+mainFormSelect.addEventListener("change", function (e) {
+    console.log('Сработало change в select');
 });
-
-// Действия могут быть самыми разными: валидация поля, отправка формы и т.д.
+mainFormFile.addEventListener("change", function (e) {
+    console.log('Сработало change в file' );
+});
 /*
-Пример:
-В константы получаем саму форму, поле ввода с именем "nameInput", а также в 
-отдельную константу "mainFormInputPlaceholder" получаем значение атрибута 
-"placeholder" этого поля ввода.
-В placeholder сейчас написано "Введите что-то...". Так вот, нам нужно чтобы когда 
-поле получало фокус, этот placeholder был равен пустой строке, т.е. исчезал.
-А в момент потери фокуса, если поле не заполнено, то мы опять увидим placeholder, 
-а именно "ВВедите что-то...".
-Это работает так:
-Мы кликаем на элемент (он получает фокус) - placeholder исчез, и теперь мы можем 
-что-то вводить. Момент потери фокуса мы увидим то что мы ввели, т.к. placeholder 
-в данный момент скрыт. Но, если мы оставим пустую строку и потеряем фокус - мы увидим 
-placeholder.
+Получаем несколт=ько полей - input, select и file.
+В каждый из них навешиваем событие change и соответствующую строку выводим 
+в консоль.
 
-Выполняется это с помощью простых манипуляций. В момент получения фокуса, т.е. по событию 
-"focus" мы передаем значение для атрибута placeholder пустую строку таким образом 
-мы добиваемся того, что placeholder исчезает (mainFormInput.placeholder = "";).
-Но, в момент потери фокуса, поскольку мы заранее получили в константу значение "placeholder", 
-мы возвращаем это значение в атрибут (mainFormInput.placeholder = mainFormInputPlaceholder).
-И если поле пустое в момент потери фокуса, мы увидим значение "placeholder".
+Поле ввода Input.
+Вводим что-то, изменяем... ничего не происходит, но когда поле теряет фокус, 
+например кликаем в другое место, срабатывает событие change и именно в этот 
+момент поле изменено.
 
-*/ 
+Поле ввода Select.
+Мы что-то выбираем, и сразу же в этот момент срабатывает событие change на 
+select'е.
+
+Поле ввода File.
+Мы кликаем "Выберите файл", выбираем некий файл и в этот момент срабатывает 
+событие change. файл выбран.
+*/
