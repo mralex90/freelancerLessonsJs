@@ -1,22 +1,22 @@
 
-// Пример
-
-const txtItem = document.querySelector('.textarea__item');
-const txtItemLimit = txtItem.getAttribute('maxlength');
-const txtCounter = document.querySelector('.textarea__counter span');
-txtCounter.innerHTML = txtItemLimit;
-
+// Событие input
 /*
-txtItem.addEventListener("keyup", txtSetCounter);
-txtItem.addEventListener("keydown", function (event) {
-    if (event.repeat) txtSetCounter();
-});
+Событие input срабатывает каждый раз при изменении значения поля.
+Отлично работает с полями ввода.
+В отличии от событий клавиатуры, оно работает при любых изменениях 
+значений, даже если они не связаны с клавиатурными действиями: 
+вставка с помощью мыши или распознавание речи при диктовке текста.
 */
-// Вместо такой конструкции можно записать так:
+const mainForm = document.forms.main;
+const mainFormInput = mainForm.nameInput;
 
-txtItem.addEventListener("input", txtSetCounter);
-
-function txtSetCounter() {
-    const txtCounterResult = txtItemLimit - txtItem.value.length;
-    txtCounter.innerHTML = txtCounterResult;
-};
+mainFormInput.addEventListener("input", function (event) {
+    console.log(`value: ${mainFormInput.value}`);
+});
+/*
+При этом стоит отметить, что событие input отрабатывает только на изменении 
+поля, а если мы просто передвигаемся клавиатурой, например, в поле ничего 
+происходить не будет. 
+По этому событие клавиатуры и события на изменение поля нужно использовать 
+в зависимости от конкретной задачи.
+*/
