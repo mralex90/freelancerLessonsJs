@@ -1,42 +1,27 @@
 
 // События форм и их элементов
 
-// Событие change
-// Срабатывает по окончании изменения элемента.
-
+// Событие input
 /*
-В текстовых input и textarea работает также как и блур (потеря фокуса), 
-но в select, radio, checkbox и т.тд сразу.
+Событие input срабатывает каждый раз при изменении значения поля.
+Отлично работает с полями ввода.
+В отличии от событий клавиатуры, оно работает при любых изменениях 
+значений, даже если они не связаны с клавиатурными действиями: 
+вставка с помощью мыши или распознавание речи при диктовке текста.
 */
+
 const mainForm = document.forms.main;
 const mainFormInput = mainForm.nameInput;
-const mainFormSelect = mainForm.nameSelect;
-const mainFormFile = mainForm.nameFile;
 
-mainFormInput.addEventListener("change", function (e) {
-    console.log('Сработало change в input');
-});
-mainFormSelect.addEventListener("change", function (e) {
-    console.log('Сработало change в select');
-});
-mainFormFile.addEventListener("change", function (e) {
-    console.log('Сработало change в file' );
+mainFormInput.addEventListener("input", function (event) {
+    console.log(`value: ${mainFormInput.value}`);
 });
 /*
-Получаем несколт=ько полей - input, select и file.
-В каждый из них навешиваем событие change и соответствующую строку выводим 
-в консоль.
-
-Поле ввода Input.
-Вводим что-то, изменяем... ничего не происходит, но когда поле теряет фокус, 
-например кликаем в другое место, срабатывает событие change и именно в этот 
-момент поле изменено.
-
-Поле ввода Select.
-Мы что-то выбираем, и сразу же в этот момент срабатывает событие change на 
-select'е.
-
-Поле ввода File.
-Мы кликаем "Выберите файл", выбираем некий файл и в этот момент срабатывает 
-событие change. файл выбран.
+Пример:
+Для поля ввода с именем nameInput создаем обработчик события "input" 
+и когда оно возникает (это событие) - выводим в консоль значение этого 
+поля.
+Если мы что-то напишем в поле, то мы видим что при каждом изменении поля 
+значение value этого поля срабатывает input и весь ход изменений этого поля 
+мы видим в консоли.
 */
