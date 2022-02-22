@@ -1,27 +1,22 @@
 
-// События форм и их элементов
+// Пример
 
-// Событие input
+const txtItem = document.querySelector('.textarea__item');
+const txtItemLimit = txtItem.getAttribute('maxlength');
+const txtCounter = document.querySelector('.textarea__counter span');
+txtCounter.innerHTML = txtItemLimit;
+
 /*
-Событие input срабатывает каждый раз при изменении значения поля.
-Отлично работает с полями ввода.
-В отличии от событий клавиатуры, оно работает при любых изменениях 
-значений, даже если они не связаны с клавиатурными действиями: 
-вставка с помощью мыши или распознавание речи при диктовке текста.
-*/
-
-const mainForm = document.forms.main;
-const mainFormInput = mainForm.nameInput;
-
-mainFormInput.addEventListener("input", function (event) {
-    console.log(`value: ${mainFormInput.value}`);
+txtItem.addEventListener("keyup", txtSetCounter);
+txtItem.addEventListener("keydown", function (event) {
+    if (event.repeat) txtSetCounter();
 });
-/*
-Пример:
-Для поля ввода с именем nameInput создаем обработчик события "input" 
-и когда оно возникает (это событие) - выводим в консоль значение этого 
-поля.
-Если мы что-то напишем в поле, то мы видим что при каждом изменении поля 
-значение value этого поля срабатывает input и весь ход изменений этого поля 
-мы видим в консоли.
 */
+// Вместо такой конструкции можно записать так:
+
+txtItem.addEventListener("input", txtSetCounter);
+
+function txtSetCounter() {
+    const txtCounterResult = txtItemLimit - txtItem.value.length;
+    txtCounter.innerHTML = txtCounterResult;
+};
